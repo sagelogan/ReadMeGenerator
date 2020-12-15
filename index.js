@@ -83,8 +83,8 @@ const licenses = [
     }
   ]
   
-var generateReadMe = (projectTitle, description ,installation, usage, contribution, testing , license, licenseURL, licenseBadge ,gitHubUsername, email ) => {  
-    return `# ${projectTitle}
+var generateReadMe = (title, description ,installation, usage, contribution, testing , license, licenseURL, licenseBadge ,gitHubUsername, email ) => {  
+    return `# ${title}
   [![license](${licenseBadge})](${licenseURL})
   ## Table of Contents 
   * [Description](#description)
@@ -116,7 +116,7 @@ var generateReadMe = (projectTitle, description ,installation, usage, contributi
 inquirer
 .prompt(questions)
 .then(answers => {
-  const {projectTitle, description ,installation, usage, contribution, testing , license, licenseURL, licenseBadge, gitHubUsername, email} = answers;
+  const {title, description ,installation, usage, contribution, testing , license, licenseURL, licenseBadge, gitHubUsername, email} = answers;
   if(licenses === "MIT License - short and simple permissive license with conditions only requiring preservation of copyright and license notices"){
     license = licenses[0].name ;
     licenseURL = licenses[0].url ;
@@ -135,7 +135,7 @@ inquirer
     licenseBadge = licenses[3].badge;
   };
 
-  const templateReadMe = generateReadMe(projectTitle, description ,installation, usage, contribution, testing, license, licenseURL, licenseBadge ,gitHubUsername, email );
+  const templateReadMe = generateReadMe(title, description ,installation, usage, contribution, testing, license, licenseURL, licenseBadge ,gitHubUsername, email );
 
     fs.writeFile('newREADME.md', templateReadMe, (err) => {
     if (err) throw err;
@@ -145,7 +145,7 @@ inquirer
 }) 
 .catch(error => {
   if(error) {
-    
+
     console.log(error)
   } 
 });
