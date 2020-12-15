@@ -17,7 +17,7 @@
   ## Contribute
   Please contact me about contributing to this project. 
   ## Test
-  N/A
+  ![Screenshot](demo.gif)
   ## Questions
   If you have any questions, Please reach out to me.
   GitHub User Profile - https://github.com/sagelogan
